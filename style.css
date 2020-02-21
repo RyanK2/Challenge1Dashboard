@@ -1,0 +1,96 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    background-color: #E9EEF0;
+}
+
+img {
+	width: 70%;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+h3 {
+	font-size: 22pt;
+}
+
+h2 {
+	line-height: 2em;
+	font-size: 24pt;
+}
+
+hr {
+	height: 3px;
+	background-color: #E9EEF0;
+}
+
+p {
+	font-size: 20pt;
+	line-height: 2em;
+}
+
+header {
+	background-color: #D7DADB;
+	padding-left: 30px;
+	text-align: center;
+	box-shadow: 0px 5px 15px grey;
+}
+
+.gridcontainer {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.statcontainer, .travelcontainer, .graphcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.passengers, .speed, .duration, .gforce, .arrival, .earth {
+	width: 80%;
+	height: 120px;
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding-top: 20px;
+	padding-left: 20px;
+	border-radius: 5px;
+}
+
+.passengers {
+	background-color: #7DC900;
+	margin-top: 30px;
+}
+
+.speed {
+	background-color: #005288;
+}
+
+.duration {
+	background-color: #B224EF;
+} 
+
+.gforce {
+	background-color: #FC4349;
+	margin-bottom: -10px;
+}
+
+.earth > h2 {
+	text-align: center;
+	padding: 0px;
+}
+
+.arrival, .earth {
+	background-color: grey;
+}
+
+.arrival > h2 {
+	text-align: center;
+}
