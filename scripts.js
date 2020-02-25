@@ -1,16 +1,20 @@
-var options = {
+ var options = {
   chart: {
-    type: 'bar'
+    type: 'bar',
+    height: 450,
+    width: '100%',
+    background: '#f4f4f4',
+    foreColor: '#333'
   },
   series: [{
-    name: 'amount',
+    name: 'sales',
     data: [40,20,19,43]
   }],
   xaxis: {
-    categories: [bread,rice,chicken,salad]
+    categories: [6,8,4,8]
   }
-}
+};
 
-var chart = new ApexCharts(document.querySelector("#rationFood"), options);
+var chart = new ApexCharts(document.querySelector('#chart'), options);
 
-chart.render();
+chart.render(); 
