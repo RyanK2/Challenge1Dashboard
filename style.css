@@ -11,17 +11,17 @@ body {
 
 img {
 	width: 70%;
-	padding-top: 20px;
+	padding-top: 30px;
 	padding-bottom: 30px;
 }
 
 h3 {
-	font-size: 22pt;
+	font-size: 21pt;
 }
 
 h2 {
-	line-height: 2em;
-	font-size: 24pt;
+	line-height: 1em;
+	font-size: 23pt;
 }
 
 hr {
@@ -39,6 +39,10 @@ header {
 	padding-left: 30px;
 	text-align: center;
 	box-shadow: 0px 5px 15px grey;
+}
+
+canvas {
+	width: 80%;
 }
 
 .gridcontainer {
@@ -64,6 +68,10 @@ header {
 	border-radius: 5px;
 }
 
+.arrival, .earth {
+	height: auto;
+}
+
 .passengers {
 	background-color: #7DC900;
 	margin-top: 30px;
@@ -84,7 +92,8 @@ header {
 
 .earth > h2 {
 	text-align: center;
-	padding: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .arrival, .earth {
@@ -93,4 +102,6 @@ header {
 
 .arrival > h2 {
 	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
