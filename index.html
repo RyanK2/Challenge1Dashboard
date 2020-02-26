@@ -5,9 +5,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,
 	initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<script src="https://cdn.jsdelivr.net/npm/apexcharts"> </script>
-	<script src="scripts.js"> </script>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"> </script>
 </head>
 <body>
 	<header>
@@ -52,16 +52,59 @@
 			</aside>
 			<section class="graphcontainer">
 				<div class="rations">
-					<div id="chart"> </div>
+					<canvas id="rationchart"> </canvas>
 				</div>
 				<div class="resources">
-					<canvas id="recourseFuel"> </canvas>
+					<canvas id="recoursefuel"> </canvas>
 				</div>
 				<div class="acceleration">
-					<canvas id="accelGraph"> </canvas>
+					<canvas id="accelgraph"> </canvas>
 				</div>
 			</section>
 		</section>
 	</main>
+	<script>
+		let rationChart = document.getElementById('rationchart');
+
+		let barChart = new Chart(rationChart, {
+  		type:'bar', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
+  		data:{
+   		 labels:['Vegetables', 'Chicken', 'Fruits', 'Rice'],
+   		 datasets:[{
+      	 label:'Rations in kg',
+     	 data:[14,30,23,34],
+     	 backgroundColor:[
+     	 'green',
+     	 'orange',
+     	 'red',
+     	 'grey'
+     	 ],
+    }]
+  },
+  options:{
+  	legend:{
+  		display: false
+  	},
+  	title: {
+  		display: true,
+  		text: 'Rations in KG',
+  		fontSize: 22,
+  		fontColor: '#283848'
+  	},
+  	layout: {
+  		padding: {
+  			top: 10
+  		}
+  	},
+  	 scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    }
+  }
+});
+	</script>
 </body>
 </html>

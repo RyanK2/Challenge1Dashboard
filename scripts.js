@@ -1,20 +1,15 @@
- var options = {
-  chart: {
-    type: 'bar',
-    height: 450,
-    width: '100%',
-    background: '#f4f4f4',
-    foreColor: '#333'
+let rationChart = document.getElementById('rationchart');
+
+let barChart = new Chart(rationChart, {
+  type: 'bar', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
+  data:{
+    labels:['Vegetables','Chicken','Fruits','Rice'],
+    datasets:[{
+      label:'Rations',
+      data:[20,32,40,10]
+    }]
   },
-  series: [{
-    name: 'sales',
-    data: [40,20,19,43]
-  }],
-  xaxis: {
-    categories: [6,8,4,8]
-  }
-};
+  options:{}
+}
 
-var chart = new ApexCharts(document.querySelector('#chart'), options);
-
-chart.render(); 
+  );
