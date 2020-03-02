@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"> </script>
+	<script src="https://kit.fontawesome.com/dd684dfa93.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<header>
@@ -23,19 +24,23 @@
 			<section class="statcontainer">
 				<div class="passengers">
 					<h3>PASSENGERS</h3>
-					<p>102</p>
+					<i class="fas fa-users fa-lg"></i>
+					<p>  102</p>
 				</div>
 				<div class="duration">
 					<h3>TRAVEL TIME</h3>
-					<p>1h 09m</p>
+					<i class="fas fa-clock fa-lg"></i>
+					<p>  1h 09m</p>
 				</div>
 				<div class="speed">
 					<h3>AVERAGE SPEED</h3>
-					<p>29800 km/s</p>
+					<i class="fas fa-tachometer-alt fa-lg"></i>
+					<p>  29800 km/s</p>
 				</div>
 				<div class="gforce">
 					<h3>G-FORCE</h3>
-					<p>8.7 G</p>
+					<i class="fas fa-anchor fa-lg"></i>
+					<p>  8.7 G</p>
 				</div>
 			</section>
 			<aside class="travelcontainer">
@@ -55,7 +60,7 @@
 					<canvas id="rationchart"> </canvas>
 				</div>
 				<div class="resources">
-					<canvas id="recoursefuel"> </canvas>
+					<canvas id="resourcefuel"> </canvas>
 				</div>
 				<div class="acceleration">
 					<canvas id="accelgraph"> </canvas>
@@ -64,44 +69,142 @@
 		</section>
 	</main>
 	<script>
-		let rationChart = document.getElementById('rationchart');
+	let rationChart = document.getElementById('rationchart');
 
-		let barChart = new Chart(rationChart, {
-  		type:'bar', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
-  		data:{
-   		 labels:['Vegetables', 'Chicken', 'Fruits', 'Rice'],
-   		 datasets:[{
-      	 label:'Rations in kg',
-     	 data:[14,30,23,34],
-     	 backgroundColor:[
-     	 'green',
-     	 'orange',
-     	 'red',
-     	 'grey'
-     	 ],
+    let barChart = new Chart(rationChart, {
+      type:'bar', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+       labels:['Vegetables', 'Chicken', 'Fruits', 'Rice'],
+       datasets:[{
+         label:'Rations in kg',
+       data:[14,30,23,34],
+       backgroundColor:[
+       'green',
+       'orange',
+       'red',
+       'grey'
+       ],
     }]
   },
   options:{
-  	legend:{
-  		display: false
-  	},
-  	title: {
-  		display: true,
-  		text: 'Rations in KG',
-  		fontSize: 22,
-  		fontColor: '#283848'
-  	},
-  	layout: {
-  		padding: {
-  			top: 10
-  		}
-  	},
-  	 scales: {
+    legend:{
+      display: false
+    },
+    title: {
+      display: true,
+      text: 'Rations in KG',
+      fontSize: 22,
+      fontColor: '#283848'
+    },
+    layout: {
+      padding: {
+        top: 10
+      }
+    },
+     scales: {
         yAxes: [{
             ticks: {
                 beginAtZero: true
             }
         }]
+    }
+  }
+});
+
+    let fuelChart = document.getElementById('resourcefuel');
+
+    let horizontalbarChart = new Chart(fuelChart, {
+      type:'horizontalBar', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+       labels:['Oxygen','Water', 'Fuel'],
+       datasets:[{
+         label:'Resources',
+       data:[96,60,80],
+       backgroundColor:[
+       'blue',
+       'lightblue',
+       'brown'
+       ],
+    }]
+  },
+  options:{
+    legend:{
+      display: false
+    },
+    title: {
+      display: true,
+      text: 'Resources',
+      fontSize: 22,
+      fontColor: '#283848'
+    },
+    layout: {
+      padding: {
+        top: 10
+      }
+    },
+     scales: {
+        xAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    }
+  }
+});
+
+     let speedChart = document.getElementById('accelgraph');
+
+    let lineChart = new Chart(speedChart, {
+      type:'line', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+       labels:[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+       datasets:[{
+         label:'Acceleration',
+       data:[5, 10, 25, 34, 44, 70, 79, 84, 87, 90, 89],
+       fill:'start',
+       backgroundColor: 'pink',
+       borderColor: 'lightblue',
+       pointBorderColor: 'red',
+       backgroundColor:[
+       'pink'
+       ],
+    }]
+  },
+  options:{
+    legend:{
+      display: false,
+    },
+    title: {
+      display: true,
+      text: 'Acceleration',
+      fontSize: 22,
+      fontColor: '#283848'
+    },
+    layout: {
+      padding: {
+        top: 10
+      }
+    },
+     scales: {
+        yAxes: [{
+        	display: true,
+        	scaleLabel: {
+        		display: true,
+        		labelString: 'Speed in 10^6 km',
+        	ticks: {
+                beginAtZero: true
+            }
+        }
+        }],
+        xAxes: [{
+        	display: true,
+        	scaleLabel: {
+        		display: true,
+        		labelString: 'Distance in 10^4 km',
+        	ticks: {
+                beginAtZero: true
+            }
+        } }]
     }
   }
 });
