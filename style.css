@@ -50,7 +50,6 @@ canvas {
 	margin-right: auto;
 }
 
-
 .gridcontainer {
 	width: 90%;
 	margin: 0 auto;
@@ -90,7 +89,7 @@ canvas {
 }
 
 .rations {
-	margin-top: -30px;
+	margin-top: -10px;
 }
 
 .arrival, .earth {

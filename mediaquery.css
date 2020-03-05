@@ -1,0 +1,124 @@
+@media only screen and (min-width: 568px) {
+.gridcontainer {
+	display: grid;
+	width: 90%;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
+
+	grid-template-areas:
+	"stats			stats"
+	"stats			stats"
+	"rations		resources"
+	"rations		recources"
+	"acceleration	acceleration"
+}
+
+.passengers, .duration, .speed, .gforce {
+	width: 100%;
+	text-align: center;
+}
+
+.statcontainer {
+	grid-area: stats;
+}
+/*
+.earth {
+	grid-area: earth;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.arrival {
+	grid-area: arrival;
+	width: 100%;
+	margin-bottom: -2px;
+}*/
+
+header {
+	width: 100%;
+}
+
+.rations {
+	grid-area: rations;
+	margin-top: 0;
+}
+
+.resources {
+	grid-area: resources;
+	margin-top: 0;	
+}
+
+.acceleration {
+	grid-area: acceleration;
+	width: 97%;
+}
+
+div.statcontainer {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.rations, .resources {
+	width: 97%;
+	height: 200px;
+	padding-top: 30px;
+}
+
+}
+
+@media only screen and (min-width: 798px) {
+.statcontainer {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.passengers, .duration, .speed, .gforce {
+	height: 100%;
+	width: 48%;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.resources, .rations {
+	height: 250px;
+}
+
+}
+
+@media only screen and (min-width: 1080px) {
+	.gridcontainer {
+	display: grid;
+	width: 90%;
+	grid-template-columns: 1fr;
+
+	grid-template-areas:
+	"stats"
+	"rations"
+	"resources"
+	"acceleration"
+}
+
+	.passengers, .duration, .speed, .gforce {
+	height: 250px;
+	padding-top: 40px;
+	padding-left: 0;
+	width: 24%;
+	margin: auto;
+	margin-top: 20px;
+}
+
+p {
+	display: block;
+	padding-top: 10px;
+}
+
+.fas {
+	padding-top: 15px;
+}
+
+.resources, .rations, .acceleration {
+	height: 100%;
+	width: 100%;
+}
+}
